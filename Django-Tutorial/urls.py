@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import RedirectView
 
 
+app_name = 'home'
 urlpatterns = [
-    url(r'^$', 'home.views.index'),
-    url(r'^polls/', include('polls.urls')),
+    url(r'^home/', include('home.urls', namespace='home')),
+    url(r'^polls/', include('polls.urls', namespace='polls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^$', RedirectView.as_view(pattern_name='home:index', permanent=False)),
 ]
