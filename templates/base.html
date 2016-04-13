@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><a href="{% url 'polls:index' %}">Polls</a></li>
+    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+    <li><a href="{% url 'home:index' %}">Return</a></li>
+</ul>
+
+{% block content %}
+{% endblock %}
+</body>
+</html>
