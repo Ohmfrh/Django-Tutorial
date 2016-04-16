@@ -1,5 +1,9 @@
 <h1>{{ question.question_text }}</h1>
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+{% endblock %}
+
 <ul>
     {% for choice in question.choice_set.all %}
         <li>{{ choice.choice_text }} -- {{ choice.votes }}</li>
