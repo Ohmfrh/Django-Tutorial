@@ -1,8 +1,13 @@
-<h1>{{ question.question_text }}</h1>
+{% extends "base.html" %}
+{% load staticfiles %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}">
 {% endblock %}
+
+<h1>{{ question.question_text }}</h1>
+
+
 
 <ul>
     {% for choice in question.choice_set.all %}
